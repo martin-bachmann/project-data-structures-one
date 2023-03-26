@@ -20,3 +20,13 @@ class Queue(AbstractQueue):
         if 0 <= index < self.__len__():
             return self._data[index]
         raise IndexError
+
+    def __str__(self):
+        str_items = ""
+        for i in range(len(self._data)):
+            value = self._data[i]
+            str_items += str(value)
+            if i + 1 < len(self._data):
+                str_items += ", "
+
+        return "Queue(" + str_items + ")"
